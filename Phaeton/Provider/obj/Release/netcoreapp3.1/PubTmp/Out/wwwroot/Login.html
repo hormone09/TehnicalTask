@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<script src="/js/jQuery.js"></script>
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/slider.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap" rel="stylesheet">
+</head>
+<body id="body">
+	<div class="header">
+		<div class="label">
+			<div style="margin: 0px;">
+				<a href="/Home/Index"><img src="/img/logo.jpg" alt=""></a>
+			</div>
+			<div>
+				<p style="font-size: 18px;">Ваш город: Караганда</p>
+			</div>
+			<div>
+				<a href="#" style="display: flex; margin: 0px;">
+					<img style="margin: 14px 10px; height: 24px; width: 30px;" src="/img/tel.png" alt="">
+					<p style="margin: 10px 0px; color:darkslategrey;">8-(707)-640-56-99</p>
+				</a>
+			</div>
+		</div>
+		<div class="navbar">
+			<a style="color: red; position: absolute; top: 20px; left: 10px;" id="admin_link1" href="/Home/ManagerMenu">Управление</a>
+			<a style="color: red; position: absolute; top: 20px; left: 130px;" id="admin_link2" href="/Home/Applications">Заявки</a>
+			<div class="links">
+				<a href="/Home/Index">Главная</a>
+				<a href="/Home/Rates">Интернет</a>
+				<a href="/Home/Services">Услуги</a>
+				<a href="/Home/NewAbonent">Стать абонентом</a>
+				<a href="/Home/Help">Помощь</a>
+			</div>
+			<div id="login-status" class="login">
+			</div>
+		</div>
+	</div>
+
+
+	<!-- КОНТЕНТ -->
+	<div class="content">
+		<div class="login-form">
+			<div class="action-type">
+				<h3 id="action-name">Авторизация</h3>
+			</div>
+			<div id="signIn-form">
+				<h2>Введите логин и пароль</h2>
+				<form id="signIn_form" action="" method="post">
+					<div>
+						<input type="tel" name="login" placeholder="Логин" value="">
+					</div>
+					<div>
+						<input type="password" name="password" placeholder="Пароль" value="">
+					</div>
+					<div id="signOn-validate" class="validate-message">
+						Validate
+					</div>
+					<input type="button" value="Войти" onclick="SendForm('Account/SignIn','signIn_form')">
+					<div class="change-action">
+						<a href="#" onclick="showRegisterForm()">Регистрация</a>
+					</div>
+				</form>
+			</div>
+			<div id="signUp-form" style="display: none;">
+				<h2>Придумайте логин и пароль, номер телефона</h2>
+				<form id="signUp_form" action="" method="post">
+					<div>
+						<input type="text" name="Name" placeholder="Имя">
+					</div>
+					<div>
+						<input type="text" name="Sename" placeholder="Фамилия">
+					</div>
+					<div>
+						<input type="text" name="UserName" placeholder="hormone0909">
+					</div>
+					<div>
+						<input type="tel" name="PhoneNumber" placeholder="+7(707)-777-77-77">
+					</div>
+					<div>
+						<input type="password" name="password" placeholder="Пароль">
+					</div>
+					<div>
+						<input type="password" name="password2" placeholder="Повторите пароль">
+					</div>
+					<div id="signUp-validate" class="validate-message">
+						Validate
+					</div>
+					<input type="button" value="Регистрация" onclick="SendForm('Account/SignUp','signUp_form')">
+					<div class="change-action">
+						<a href="#" onclick="showLoginForm()">Авторизация</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<!-- КОНТЕНТ -->
+
+
+	<div class="footer">
+		<div>
+			<a href="/Home/Rates">Тарифы</a>
+			<a href="/Home/Help">Помощь</a>
+			<a href="tel:87770460839">Контактный центр</a>
+		</div>
+		<div>
+			<a href="https://instagram.com"><img src="/img/instagram.png" alt=""></a>
+			<a href="https://web.telegram.org"><img src="/img/telegram.png" alt=""></a>
+			<a href="https://web.whatsapp.com"><img src="/img/whatsapp.png" alt=""></a>
+		</div>
+	</div>
+
+	<!--JavaScript-->
+	<script src="/js/animation.js"></script>
+	<script src="/js/server.js"></script>
+	<!--JavaScript-->
+</body>
+</html>

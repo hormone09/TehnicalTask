@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <script src="/js/jQuery.js"></script>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/slider.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap" rel="stylesheet">
+</head>
+<body id="body">
+    <div class="header">
+        <div class="label">
+            <div style="margin: 0px;">
+                <a href="/Home/Index"><img src="/img/logo.jpg" alt=""></a>
+            </div>
+            <div>
+                <p style="font-size: 18px;">Ваш город: Караганда</p>
+            </div>
+            <div>
+                <a href="#" style="display: flex; margin: 0px;">
+                    <img style="margin: 14px 10px; height: 24px; width: 30px;" src="/img/tel.png" alt="">
+                    <p style="margin: 10px 0px; color:darkslategrey;">8-(707)-640-56-99</p>
+                </a>
+            </div>
+        </div>
+        <div class="navbar">
+            <a style="color: red; position: absolute; top: 20px; left: 10px;" id="admin_link1" href="/Home/ManagerMenu">Управление</a>
+            <a style="color: red; position: absolute; top: 20px; left: 130px;" id="admin_link2" href="/Home/Applications">Заявки</a>
+            <div class="links">
+                <a href="/Home/Index">Главная</a>
+                <a href="/Home/Rates">Интернет</a>
+                <a href="/Home/Services">Услуги</a>
+                <a href="/Home/NewAbonent">Стать абонентом</a>
+                <a href="/Home/Help">Помощь</a>
+            </div>
+            <div id="login-status" class="login">
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal Window -->
+    <div id="modal" class="modal">
+        <div class="modal-fon"></div>
+        <div class="modal-window">
+            <div>
+                <h1>Подключение услуги</h1>
+                <h4 id="Command" style="margin: 10px 0px;"></h4>
+                <h4>Или отправьте заявку на подключение менеджеру</h4>
+                <h4 id="Payment" style="margin: 10px 0px;"></h4>
+            </div>
+            <div>
+                <input type="button" value="Отправить заявку" onclick="AddServiceApplication()" />
+                <a href="#" onclick="offModal()">
+                    <input type="button" value="Вернутся">
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- Modal Window -->
+    <!--КОНТЕНТ-->
+    <div class="content">
+        <div class="container">
+            <div class="services">
+                <div class="menu">
+                    <a href="#" onclick="showService('internet')">
+                        <div style="border: none;">
+                            <p> Интернет</p>
+                        </div>
+                    </a>
+                    <a href="#" onclick="showService('phone')">
+                        <div>
+                            <img src="" alt=""><p> Звонки</p>
+                        </div>
+                    </a>
+                    <a href="#" onclick="showService('zero')">
+                        <div>
+                            <p>Дополнительно</p>
+                        </div>
+                    </a>
+                    <a href="#" onclick="showService('new')">
+                        <div>
+                            <p>Новым абонентам</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="all-services">
+                    <h1>Наши услуги</h1>
+                    <h4 id="service-name">Интернет</h4>
+                    <div id="internet-services">
+                    </div>
+                    <div id="phone-services">
+                    </div>
+                    <div id="zero-services">
+                    </div>
+                    <div id="new-services">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--КОНТЕНТ-->
+
+    <div class="footer">
+        <div>
+            <a href="/Home/Rates">Тарифы</a>
+            <a href="/Home/Help">Помощь</a>
+            <a href="tel:87770460839">Контактный центр</a>
+        </div>
+        <div>
+            <a href="https://instagram.com"><img src="/img/instagram.png" alt=""></a>
+            <a href="https://web.telegram.org"><img src="/img/telegram.png" alt=""></a>
+            <a href="https://web.whatsapp.com"><img src="/img/whatsapp.png" alt=""></a>
+        </div>
+    </div>
+
+    <!--JavaScript-->
+    <script src="/js/animation.js"></script>
+    <script src="/js/server.js"></script>
+    <!--JavaScript-->
+</body>
+</html>

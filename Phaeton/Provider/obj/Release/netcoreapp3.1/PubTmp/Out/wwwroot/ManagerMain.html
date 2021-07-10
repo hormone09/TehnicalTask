@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<script src="/js/jQuery.js"></script>
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/slider.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap" rel="stylesheet">
+</head>
+<body id="body">
+	<div class="header">
+		<div class="label">
+			<div style="margin: 0px;">
+				<a href="/Home/Index"><img src="/img/logo.jpg" alt=""></a>
+			</div>
+			<div>
+				<p style="font-size: 18px;">Ваш город: Караганда</p>
+			</div>
+			<div>
+				<a href="#" style="display: flex; margin: 0px;">
+					<img style="margin: 14px 10px; height: 24px; width: 30px;" src="/img/tel.png" alt="">
+					<p style="margin: 10px 0px; color:darkslategrey;">8-(707)-640-56-99</p>
+				</a>
+			</div>
+		</div>
+		<div class="navbar">
+			<a style="color: red; position: absolute; top: 20px; left: 10px;" id="admin_link1" href="/Home/ManagerMenu">Управление</a>
+			<a style="color: red; position: absolute; top: 20px; left: 130px;" id="admin_link2" href="/Home/Applications">Заявки</a>
+			<div class="links">
+				<a href="/Home/Index">Главная</a>
+				<a href="/Home/Rates">Интернет</a>
+				<a href="/Home/Services">Услуги</a>
+				<a href="/Home/NewAbonent">Стать абонентом</a>
+				<a href="/Home/Help">Помощь</a>
+			</div>
+			<div id="login-status" class="login">
+			</div>
+		</div>
+	</div>
+
+
+	<!-- КОНТЕНТ -->
+
+	<div class="content">
+		<div class="container" style="display: flex; justify-content: space-around;">
+			<form id="add_rate" class="add-form" action="" method="post">
+				<h2>Добавление тарифа:</h2>
+				<div>
+					<input type="text" name="Name" placeholder="Название тарифа">
+				</div>
+				<div>
+					<input type="text" name="Desk" placeholder="Описание">
+				</div>
+				<div>
+					<input type="text" name="Payment" placeholder="Разовый платеж">
+				</div>
+				<div>
+					<input type="text" name="PriceForConnection" placeholder="Стоимость подключения">
+				</div>
+				<div>
+					<input type="text" name="NumberForMobileConnection" placeholder="Команда для подключения">
+				</div>
+				<div>
+					<h4>Выберите тип тарифа</h4>
+				</div>
+				<div class="add-service-types">
+					<div>
+						<p><input name="IsMoreInternet" type="radio" value="true" checked>Интернет</p>
+						<p>Мобильная связь<input name="IsMoreInternet" type="radio" value="false" checked></p>
+					</div>
+				</div>
+				<div>
+					<h4>Размер пакета:</h4>
+				</div>
+				<div class="trafic">
+					<input type="number" name="GigabyteCount" placeholder="ГБ">
+					<input type="number" name="MinuteCount" placeholder="МИН">
+					<input type="number" name="SMSCount" placeholder="СМС">
+				</div>
+				<div id="_validate" style="margin: 10px 70px; color: red; font-weight: bold;">
+
+				</div>
+				<div>
+					<input type="button" value="Добавить" onclick="EditSendForm('Content/AddRate', 'add_rate')">
+				</div>
+			</form>
+			<form id="add_service" class="add-form" action="" method="post">
+				<h2>Добавление новой услуги:</h2>
+				<div>
+					<input type="text" name="Name" placeholder="Название тарифа">
+				</div>
+				<div>
+					<input type="text" name="Desk" placeholder="Описание">
+				</div>
+				<div>
+					<input type="text" name="NumberForMobileConnection" placeholder="Команда для подключения">
+				</div>
+				<div>
+					<input type="text" name="Payment" placeholder="Разовый платеж">
+				</div>
+				<div>
+					<input type="text" name="PriceForConnection" placeholder="Стоимость подключения">
+				</div>
+				<div>
+					<h4>Выберите тип оплаты</h4>
+				</div>
+				<div class="add-service-types">
+					<div>
+						<p><input name="IsPaymentOnceMonth" type="radio" value="true">Раз в месяц</p>
+						<p><input name="IsPaymentOnceMonth" type="radio" value="false">Каждый день</p>
+					</div>
+				</div>
+				<div>
+					<h4>Выберите тип услуги</h4>
+				</div>
+				<div class="add-service-types">
+					<div>
+						<p><input name="Type" type="radio" value="Internet">Интернет</p>
+						<p>Звонки<input name="Type" type="radio" value="Phone"></p>
+					</div>
+					<div>
+						<p><input name="Type" type="radio" value="Balance" checked>При нуле</p>
+						<p>Новым пользователям<input name="Type" type="radio" value="NewUsers" checked></p>
+					</div>
+				</div>
+				<div id="_validate" style="margin: 10px 70px; color: red; font-weight: bold;">
+				</div>
+				<div>
+					<input type="button" value="Добавить" onclick="EditSendForm('Content/AddService', 'add_service')">
+				</div>
+			</form>
+		</div>
+
+		<div class="container">
+			<div>
+				<h3>Редактирование имеющихся тарифов</h3>
+			</div>
+			<div id="rates_for_admin" class="all-rates">
+
+			</div>
+			<div>
+				<h3>Редактирование имеющихся услуг</h3>
+			</div>
+			<div id="services_for_delete" class="all-services">
+			</div>
+		</div>
+	</div>
+
+	<!-- КОНТЕНТ -->
+	<!-- Modal Window -->
+	<div id="modal" class="modal">
+		<div class="modal-fon"></div>
+		<div class="modal-window">
+			<div>
+				<h1>Подключение услуги</h1>
+				<h4 id="Command" style="margin: 10px 0px;"></h4>
+				<h4>Или отправьте заявку на подключение менеджеру</h4>
+				<h4 id="Payment" style="margin: 10px 0px;"></h4>
+			</div>
+			<div>
+				<input type="button" value="Отправить заявку" onclick="AddRateApplication()" />
+				<a href="#" onclick="offModal()">
+					<input type="button" value="Вернутся">
+				</a>
+			</div>
+		</div>
+	</div>
+	<!-- Modal Window -->
+
+
+	<div class="footer">
+		<div>
+			<a href="/Home/Rates">Тарифы</a>
+			<a href="/Home/Help">Помощь</a>
+			<a href="tel:87770460839">Контактный центр</a>
+		</div>
+		<div>
+			<a href="https://instagram.com"><img src="/img/instagram.png" alt=""></a>
+			<a href="https://web.telegram.org"><img src="/img/telegram.png" alt=""></a>
+			<a href="https://web.whatsapp.com"><img src="/img/whatsapp.png" alt=""></a>
+		</div>
+	</div>
+
+	<!--JavaScript-->
+	<script src="/js/animation.js"></script>
+	<script src="/js/server.js"></script>
+	<!--JavaScript-->
+</body>
+</html>

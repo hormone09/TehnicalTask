@@ -1,0 +1,74 @@
+body
+{
+    min-width: 1600px;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    background-color: darkgray;
+}
+.label
+{
+    width: 40%;
+    margin: 0% 30%;
+    text-align: left;
+}
+.label h1
+{
+    text-align: center;
+    color: blue;
+}
+.label span
+{
+    color: blue;
+}
+.container
+{
+    background-color: white;
+    width: 60%;
+    margin: -0.5% 20%;
+}
+.navbar
+{
+    background-color: rgb(38, 38, 102);
+    height: 100px;
+    width: 100%;
+}
+.navbar .links
+{
+    display: flex;
+}
+.navbar .links a
+{
+    width: 25%;
+    height: 100px;
+    text-decoration: none;
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+}
+.navbar .links a div
+{
+    margin: 40px 0px;
+}
+.navbar .links a:hover
+{
+    animation: link-hover 1.2s forwards;
+}
+.content {
+    width: 90%;
+    min-height: 598px;
+    height: auto;
+    margin: 2% 5%;
+}
+
+@keyframes link-hover {
+    from{ 
+        background-color: rgb(38, 38, 102); 
+        color: white;
+    }
+    to{ 
+        background-color: white; 
+        color: blue;
+    }
+}
